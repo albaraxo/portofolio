@@ -1,0 +1,15 @@
+body {
+    /* Fade and slide from left */
+    opacity: 0;
+    transform: translateX(-50px);
+    /* Start 50px left */
+    animation: fadeSlideIn 1.5s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        /* End at original position */
+    }
+}
