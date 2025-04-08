@@ -1,96 +1,101 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #07031A;
-    color: #F4F6FF;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #07031A;
+  color: #F4F6FF;
 }
 
 header {
-    background-color: rgb(255 169 0);
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
+  background-color: rgb(255 169 0);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
-h2{
+
+
+h2 {
   color: #FBD46D;
   font-size: 2.2em;
 }
 
 header img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-top: 1rem;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: 1rem;
 }
 
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    background-color: #10375C;
-    padding: 0.5rem;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background-color: #10375C;
+  padding: 0.5rem;
+  margin: 0;
 }
 
 nav ul li {
-    margin: 0 1rem;
+  margin: 0 1rem;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 main {
-    padding: 2rem;
-    text-align: center;
+  padding: 2rem;
+  text-align: center;
 
 }
+
 main p {
   max-width: 700px;
-  margin: 1rem auto; /* top-bottom 1rem, left-right auto (centered) */
-  padding: 0 1rem; /* padding left and right */
+  margin: 1rem auto;
+  /* top-bottom 1rem, left-right auto (centered) */
+  padding: 0 1rem;
+  /* padding left and right */
   line-height: 1.6;
   text-align: center;
 }
 
 
 section {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .project img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 1rem;
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
 }
 
 .social-media a {
-    display: inline-block;
-    margin-right: 1rem;
-    color: #007BFF;
-    text-decoration: none;
+  display: inline-block;
+  margin-right: 1rem;
+  color: #007BFF;
+  text-decoration: none;
 }
 
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-hr{
+hr {
   border: dotted #4F8A8B 15px;
   border-bottom: none;
   width: 15%;
   margin: 10px auto 30px;
   margin-top: .5%;
-  margin-bottom:  2%;
+  margin-bottom: 2%;
   color: #4F8A8B;
 
 }
@@ -98,164 +103,165 @@ hr{
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    nav ul {
-        flex-direction: column;
-    }
+  nav ul {
+    flex-direction: column;
+  }
 
-    nav ul li {
-        margin: 0.5rem 0;
-    }
+  nav ul li {
+    margin: 0.5rem 0;
+  }
 }
 
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
+  header h1 {
+    font-size: 1.5rem;
+  }
 
-    main {
-        padding: 1rem;
-    }
+  main {
+    padding: 1rem;
+  }
 }
 
 @media (max-width: 576px) {
-    .social-media a {
-        display: block;
-        margin-bottom: 0.5rem;
-    }
+  .social-media a {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
 }
 
-/* From Uiverse.io by Praashoo7 */ 
-/* From Uiverse.io by deamelo */ 
+/* From Uiverse.io by Praashoo7 */
+/* From Uiverse.io by deamelo */
 .main {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
-  align-items: center; /* Center the whole block horizontally */
+  align-items: center;
+  /* Center the whole block horizontally */
 }
 
-  
-  .up {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5em;
-  }
-  
-  .down {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5em;
-  }
-  
-  .card1 {
-    width: 90px;
-    height: 90px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 90px 5px 5px 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: 0.2s ease-in-out;
-  }
-  
-  .whatsapp {
-    margin-top: 1.5em;
-    margin-left: 1.2em;
-    fill: #00ff00;
-  }
-  
-  .card2 {
-    width: 90px;
-    height: 90px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 5px 90px 5px 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: 0.2s ease-in-out;
-  }
-  
-  .linkedin {
-    margin-top: 1.5em;
-    margin-left: -0.9em;
-    fill: #0077b5;
-  }
-  
-  .card3 {
-    width: 90px;
-    height: 90px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 5px 5px 5px 90px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: 0.2s ease-in-out;
-  }
-  
-  .github {
-    margin-top: -0.6em;
-    margin-left: 1.2em;
-  }
-  
-  .card4 {
-    width: 90px;
-    height: 90px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 5px 5px 90px 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: 0.2s ease-in-out;
-  }
-  
-  .x {
-    fill: black;
-}
-  
-  .card1:hover {
-    cursor: pointer;
-    scale: 1.1;
-    background-color: #00ff00;
-  }
-  
-  .card1:hover .whatsapp {
-    fill: white;
-  }
-  
-  .card2:hover {
-    cursor: pointer;
-    scale: 1.1;
-    background-color: #0077b5;
-  }
-  
-  .card2:hover .linkedin {
-    fill: white;
-  }
-  
-  .card3:hover {
-    cursor: pointer;
-    scale: 1.1;
-    background-color: black;
-  }
-  
-  .card3:hover .github {
-    fill: white;
-  }
-  
-  .card4:hover {
-    cursor: pointer;
-    scale: 1.1;
-    background-color: black;
-  }
-  
-  .card4:hover .x {
-    fill: white;
-  }
 
-  /* From Uiverse.io by OliverZeros */ 
+.up {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.down {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.card1 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 90px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.whatsapp {
+  margin-top: 1.5em;
+  margin-left: 1.2em;
+  fill: #00ff00;
+}
+
+.card2 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 90px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.linkedin {
+  margin-top: 1.5em;
+  margin-left: -0.9em;
+  fill: #0077b5;
+}
+
+.card3 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 5px 90px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.github {
+  margin-top: -0.6em;
+  margin-left: 1.2em;
+}
+
+.card4 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 90px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
+}
+
+.x {
+  fill: black;
+}
+
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #00ff00;
+}
+
+.card1:hover .whatsapp {
+  fill: white;
+}
+
+.card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #0077b5;
+}
+
+.card2:hover .linkedin {
+  fill: white;
+}
+
+.card3:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: black;
+}
+
+.card3:hover .github {
+  fill: white;
+}
+
+.card4:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: black;
+}
+
+.card4:hover .x {
+  fill: white;
+}
+
+/* From Uiverse.io by OliverZeros */
 button {
   all: unset;
 }
@@ -389,15 +395,15 @@ button {
   transition-delay: 0.2s;
   transform: scale(1);
 }
-.project{
+
+.project {
   margin-bottom: 3%;
 }
 
-.project h3{
+.project h3 {
   color: #ff7e7e;
 }
 
-.project a{
+.project a {
   color: #4F8A8B;
 }
-
