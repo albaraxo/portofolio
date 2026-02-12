@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&family=Lalezar&display=swap");
 
 * {
   box-sizing: border-box;
@@ -14,13 +14,131 @@ body {
   direction: rtl;
   overflow: hidden;
   background: #000000;
+  font-family: "Cairo", sans-serif;
+}
+
+.site-header {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 0 1rem;
+}
+
+.navbar {
+  width: min(1060px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 1rem;
+  border: 2px solid #ffffff;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(4px);
+  box-shadow: 5px 5px 0 #1f1f1f;
+}
+
+.brand {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Lalezar", cursive;
+  font-size: 1.8rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-links a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 1.02rem;
+  font-weight: 700;
+  padding: 0.34rem 0.72rem;
+  border: 1px solid transparent;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.nav-links a:hover {
+  border-color: #ffffff;
+  background: #111111;
+}
+
+.nav-cta {
+  color: #2b0b18;
+  background: #ffffff;
+  text-decoration: none;
+  border: 2px solid #ffffff;
+  padding: 0.34rem 0.88rem;
+  font-weight: 800;
+  box-shadow: 3px 3px 0 #2e2e2e;
+}
+
+.ambient-lane {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: clamp(170px, 24vw, 320px);
+  z-index: 12;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ambient-left {
+  left: clamp(8px, 2vw, 28px);
+  mask-image: linear-gradient(to right, #000000 84%, transparent 100%);
+}
+
+.ambient-right {
+  right: clamp(8px, 2vw, 28px);
+  mask-image: linear-gradient(to left, #000000 84%, transparent 100%);
+}
+
+.ambient-track {
+  position: absolute;
+  inset: 0;
+}
+
+.petal {
+  position: absolute;
+  top: var(--y);
+  left: 50%;
+  width: var(--size);
+  height: calc(var(--size) * 0.66);
+  opacity: var(--opacity);
+  background: linear-gradient(135deg, #ffffff 0%, #d4d4d4 62%, #7f7f7f 100%);
+  border-radius: 58% 42% 64% 36% / 62% 38% 58% 42%;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.28);
+  filter: blur(0.15px);
+  will-change: transform;
+}
+
+.petal-left {
+  animation: lane-left var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+.petal-right {
+  animation: lane-right var(--duration) linear infinite;
+  animation-delay: var(--delay);
 }
 
 .splash-screen {
   position: fixed;
   inset: 0;
+  z-index: 20;
   display: grid;
   place-items: center;
+  pointer-events: none;
 }
 
 .splash-content {
@@ -84,6 +202,105 @@ body {
     transform: translateY(0);
   }
 }
+
+@keyframes lane-left {
+  0% {
+    transform: translate3d(calc(-1 * var(--travel)), 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(calc(var(--travel) * 0.1), calc(var(--sway) * 0.35), 0) rotate(170deg);
+  }
+
+  100% {
+    transform: translate3d(var(--travel), calc(var(--sway) * -0.2), 0) rotate(340deg);
+  }
+}
+
+@keyframes lane-right {
+  0% {
+    transform: translate3d(var(--travel), 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(calc(var(--travel) * -0.1), calc(var(--sway) * -0.35), 0) rotate(-170deg);
+  }
+
+  100% {
+    transform: translate3d(calc(-1 * var(--travel)), calc(var(--sway) * 0.2), 0) rotate(-340deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0.58rem 0.78rem;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    padding: 0.28rem 0.54rem;
+  }
+
+  .brand {
+    font-size: 1.55rem;
+  }
+
+  .nav-cta {
+    padding: 0.28rem 0.7rem;
+  }
+
+  .ambient-lane {
+    width: clamp(130px, 24vw, 190px);
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header {
+    top: 0.6rem;
+    padding: 0 0.6rem;
+  }
+
+  .navbar {
+    gap: 0.45rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+  }
+
+  .splash-name {
+    font-size: clamp(4.8rem, 27vw, 8.8rem);
+  }
+
+  .splash-subtitle {
+    margin-top: 1.2rem;
+    font-size: clamp(1.7rem, 8vw, 2.5rem);
+  }
+
+  .ambient-lane {
+    width: 95px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal,
+  .splash-name,
+  .splash-subtitle {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+
+
+
 
 
 

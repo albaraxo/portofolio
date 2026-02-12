@@ -7,11 +7,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header class="site-header" aria-label="التنقل الرئيسي">
+      <nav class="navbar">
+        <a href="#" class="brand">البراء</a>
+        <ul class="nav-links">
+          <li><a href="#">الرئيسية</a></li>
+          <li><a href="#">من أنا</a></li>
+          <li><a href="#">أعمالي</a></li>
+          <li><a href="#">تواصل</a></li>
+        </ul>
+        <a href="#" class="nav-cta">ابدأ</a>
+      </nav>
+    </header>
+
+    <div class="ambient-lane ambient-left" aria-hidden="true">
+      <div id="ambientLeft" class="ambient-track"></div>
+    </div>
+    <div class="ambient-lane ambient-right" aria-hidden="true">
+      <div id="ambientRight" class="ambient-track"></div>
+    </div>
+
     <div class="splash-screen" aria-hidden="false">
       <div class="splash-content">
         <div class="splash-name">البراء</div>
         <div class="splash-subtitle">للإبداع قصة</div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
