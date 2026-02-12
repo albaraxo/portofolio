@@ -6,28 +6,81 @@
     <title>Splash - البراء</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header class="site-header" aria-label="التنقل الرئيسي">
-      <nav class="navbar">
-        <a href="#" class="brand">البراء</a>
-        <ul class="nav-links">
-          <li><a href="#">الرئيسية</a></li>
-          <li><a href="#">من أنا</a></li>
-          <li><a href="#">أعمالي</a></li>
-          <li><a href="#">تواصل</a></li>
-        </ul>
-        <a href="#" class="nav-cta">ابدأ</a>
-      </nav>
-    </header>
+  <body class="is-loading">
+    <div id="siteShell" class="site-shell">
+      <header class="site-header" aria-label="التنقل الرئيسي">
+        <nav class="navbar">
+          <a href="#home" class="brand">البراء</a>
+          <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">من أنا</a></li>
+            <li><a href="#projects">أعمالي</a></li>
+            <li><a href="#skills">مهاراتي</a></li>
+          </ul>
+          <a href="#projects" class="nav-cta">ابدأ</a>
+        </nav>
+      </header>
 
-    <div class="ambient-lane ambient-left" aria-hidden="true">
-      <div id="ambientLeft" class="ambient-track"></div>
-    </div>
-    <div class="ambient-lane ambient-right" aria-hidden="true">
-      <div id="ambientRight" class="ambient-track"></div>
+      <div class="ambient-lane ambient-left" aria-hidden="true">
+        <div id="ambientLeft" class="ambient-track"></div>
+      </div>
+      <div class="ambient-lane ambient-right" aria-hidden="true">
+        <div id="ambientRight" class="ambient-track"></div>
+      </div>
+
+      <main id="home" class="site-main">
+        <section class="content-intro" aria-label="العنوان الافتتاحي">
+          <h1 class="content-splash-name">البراء</h1>
+          <p class="content-splash-subtitle">للإبداع قصة</p>
+        </section>
+
+        <section id="about" class="content-section" aria-label="من أنا">
+          <h2 class="section-title">من أنا</h2>
+          <p class="about-text">
+            مطور واجهات وتجارب رقمية أعمل على بناء مواقع سريعة، واضحة، ومصممة بعناية.
+            أركز على تحويل الفكرة إلى تجربة عملية تجمع بين الجمال وسهولة الاستخدام.
+          </p>
+        </section>
+
+        <section id="skills" class="content-section" aria-label="المهارات">
+          <h2 class="section-title">المهارات</h2>
+          <div class="skills-grid">
+            <span class="skill-chip">HTML5</span>
+            <span class="skill-chip">CSS3</span>
+            <span class="skill-chip">JavaScript</span>
+            <span class="skill-chip">Responsive Design</span>
+            <span class="skill-chip">UI/UX</span>
+            <span class="skill-chip">Git & GitHub</span>
+          </div>
+        </section>
+
+        <section id="projects" class="content-section" aria-label="المشاريع">
+          <h2 class="section-title">المشاريع</h2>
+          <div class="projects-grid">
+            <article class="project-card">
+              <h3 class="project-title">موقع شخصي تفاعلي</h3>
+              <p class="project-desc">
+                صفحة تعريفية متكاملة مع انتقالات سلسة وهوية بصرية واضحة لعرض الخدمات والأعمال.
+              </p>
+            </article>
+            <article class="project-card">
+              <h3 class="project-title">لوحة تحكم للمهام</h3>
+              <p class="project-desc">
+                تطبيق لإدارة المهام اليومية مع واجهة بسيطة تدعم ترتيب الأولويات ومتابعة الإنجاز.
+              </p>
+            </article>
+            <article class="project-card">
+              <h3 class="project-title">واجهة متجر إلكتروني</h3>
+              <p class="project-desc">
+                تصميم واجهة عرض منتجات يركز على الوضوح وسرعة التصفح وتجربة شراء مريحة.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
     </div>
 
-    <div class="splash-screen" aria-hidden="false">
+    <div id="splashScreen" class="splash-screen" aria-hidden="false">
       <div class="splash-content">
         <div class="splash-name">البراء</div>
         <div class="splash-subtitle">للإبداع قصة</div>
