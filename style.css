@@ -1,0 +1,68 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  direction: rtl;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 230, 0, 0.2), transparent 42%),
+    radial-gradient(circle at 70% 65%, rgba(255, 51, 120, 0.22), transparent 44%),
+    linear-gradient(145deg, #070910 0%, #12162a 100%);
+}
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.splash-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 22px, rgba(255, 255, 255, 0.09) 22px 24px),
+    repeating-linear-gradient(-45deg, transparent 0 28px, rgba(255, 255, 255, 0.06) 28px 30px);
+}
+
+.splash-name {
+  position: relative;
+  z-index: 1;
+  font-family: "Lalezar", cursive;
+  font-size: clamp(6rem, 24vw, 14rem);
+  line-height: 0.85;
+  color: #ffe600;
+  text-shadow:
+    5px 5px 0 #050505,
+    10px 10px 0 rgba(255, 51, 120, 0.55);
+  transform: translateY(120%);
+  animation: splash-rise 1.2s cubic-bezier(0.2, 0.82, 0.2, 1) forwards;
+}
+
+@keyframes splash-rise {
+  0% {
+    transform: translateY(120%) scale(0.88);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateY(-10%) scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
