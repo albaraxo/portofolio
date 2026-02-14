@@ -1,6 +1,5 @@
-﻿const leftLane = document.getElementById("ambientLeft");
+const leftLane = document.getElementById("ambientLeft");
 const rightLane = document.getElementById("ambientRight");
-const splashScreen = document.getElementById("splashScreen");
 
 function populateLane(container, side) {
   if (!container) return;
@@ -32,32 +31,3 @@ function populateLane(container, side) {
 
 populateLane(leftLane, "left");
 populateLane(rightLane, "right");
-
-let isRevealed = false;
-
-function revealSite() {
-  if (isRevealed) return;
-  isRevealed = true;
-  if (!splashScreen) {
-    document.body.classList.remove("is-loading");
-    return;
-  }
-
-  splashScreen.classList.add("hide");
-  splashScreen.setAttribute("aria-hidden", "true");
-
-  // Start revealing main content after splash fade begins.
-  setTimeout(() => {
-    document.body.classList.remove("is-loading");
-  }, 520);
-
-  setTimeout(() => {
-    splashScreen.remove();
-  }, 1100);
-}
-
-window.addEventListener("load", () => {
-  setTimeout(revealSite, 1850);
-});
-
-setTimeout(revealSite, 4200);

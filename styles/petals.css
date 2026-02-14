@@ -1,0 +1,96 @@
+.ambient-lane {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: clamp(170px, 24vw, 320px);
+  z-index: 12;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ambient-left {
+  left: clamp(8px, 2vw, 28px);
+  mask-image: linear-gradient(to right, #000000 84%, transparent 100%);
+}
+
+.ambient-right {
+  right: clamp(8px, 2vw, 28px);
+  mask-image: linear-gradient(to left, #000000 84%, transparent 100%);
+}
+
+.ambient-track {
+  position: absolute;
+  inset: 0;
+}
+
+.petal {
+  position: absolute;
+  top: var(--y);
+  left: 50%;
+  width: var(--size);
+  height: calc(var(--size) * 0.66);
+  opacity: var(--opacity);
+  background: linear-gradient(135deg, #ffffff 0%, #d4d4d4 62%, #7f7f7f 100%);
+  border-radius: 58% 42% 64% 36% / 62% 38% 58% 42%;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.28);
+  filter: blur(0.15px);
+  will-change: transform;
+}
+
+.petal-left {
+  animation: lane-left var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+.petal-right {
+  animation: lane-right var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes lane-left {
+  0% {
+    transform: translate3d(calc(-1 * var(--travel)), 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(calc(var(--travel) * 0.1), calc(var(--sway) * 0.35), 0) rotate(170deg);
+  }
+
+  100% {
+    transform: translate3d(var(--travel), calc(var(--sway) * -0.2), 0) rotate(340deg);
+  }
+}
+
+@keyframes lane-right {
+  0% {
+    transform: translate3d(var(--travel), 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(calc(var(--travel) * -0.1), calc(var(--sway) * -0.35), 0) rotate(-170deg);
+  }
+
+  100% {
+    transform: translate3d(calc(-1 * var(--travel)), calc(var(--sway) * 0.2), 0) rotate(-340deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .ambient-lane {
+    width: clamp(130px, 24vw, 190px);
+  }
+}
+
+@media (max-width: 680px) {
+  .ambient-lane {
+    width: 95px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
