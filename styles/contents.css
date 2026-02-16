@@ -47,9 +47,7 @@ body:not(.is-loading) .site-shell {
 }
 
 .content-section {
-  border: none;
-  background: #ffffff;
-  box-shadow: 5px 5px 0 #1f1f1f;
+
   padding: 1rem 0.95rem;
 }
 
@@ -69,6 +67,10 @@ body:not(.is-loading) .site-shell {
   color: #121212;
 }
 
+.keyword-green {
+  color: #00bd6d;
+}
+
 .face-section {
   display: flex;
   justify-content: center;
@@ -83,6 +85,25 @@ body:not(.is-loading) .site-shell {
   border-radius: 50%;
   border: 3px solid #ffffff;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.site-footer {
+  width: min(1060px, 100%);
+  margin: 0 auto 1.2rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.footer-copy {
+  display: inline-block;
+  padding: 0.62rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #d6e0d9;
+  color: #1d2a24;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 @media (max-width: 900px) {
@@ -102,5 +123,14 @@ body:not(.is-loading) .site-shell {
 
   .content-section + .content-section {
     margin-top: 1rem;
+  }
+
+  .site-footer {
+    margin-bottom: 1rem;
+    padding-inline: 0.8rem;
+  }
+
+  .footer-copy {
+    width: 100%;
   }
 }
