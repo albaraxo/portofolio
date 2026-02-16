@@ -4,7 +4,7 @@ const rightLane = document.getElementById("ambientRight");
 function populateLane(container, side) {
   if (!container) return;
 
-  const COUNT = 34;
+  const COUNT = 40;
 
   for (let i = 0; i < COUNT; i += 1) {
     const petal = document.createElement("span");

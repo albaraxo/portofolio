@@ -9,12 +9,12 @@
 }
 
 .ambient-left {
-  left: clamp(8px, 2vw, 28px);
+  left: clamp(0px, 2vw, 0px);
   mask-image: linear-gradient(to right, #000000 92%, transparent 100%);
 }
 
 .ambient-right {
-  right: clamp(8px, 2vw, 28px);
+  right: clamp(0px, 2vw, 0px);
   mask-image: linear-gradient(to left, #000000 92%, transparent 100%);
 }
 

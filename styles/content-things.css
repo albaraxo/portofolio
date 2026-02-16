@@ -26,6 +26,7 @@
 }
 
 .thing-media {
+  position: relative;
   display: block;
   width: 100%;
   border: none;
@@ -33,7 +34,31 @@
   margin: 0;
   cursor: pointer;
   background: transparent;
-}`r`n`r`n.thing-media::after {`r`n  content: "?";`r`n  position: absolute;`r`n  inset-inline-start: 0.62rem;`r`n  top: 0.62rem;`r`n  width: 26px;`r`n  height: 26px;`r`n  border-radius: 999px;`r`n  display: grid;`r`n  place-items: center;`r`n  color: #ffffff;`r`n  font-size: 0.95rem;`r`n  font-weight: 800;`r`n  line-height: 1;`r`n  background: rgba(0, 0, 0, 0.45);`r`n  border: 1px solid rgba(255, 255, 255, 0.35);`r`n  pointer-events: none;`r`n  transition: transform 180ms ease, background-color 180ms ease;`r`n}`r`n`r`n.thing-media:hover::after,`r`n.thing-media:focus-visible::after {`r`n  transform: translateY(-1px) scale(1.08);`r`n  background: rgba(0, 0, 0, 0.6);`r`n}`r`n`r`n.thing-card.is-open .thing-media::after {`r`n  content: "?";`r`n  background: rgba(0, 0, 0, 0.62);`r`n}
+}
+
+.thing-media::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.58rem;
+  width: 22px;
+  height: 6px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background:
+    radial-gradient(circle, #c2c7cf 0 1.8px, transparent 2px) 0 50% / 6px 6px no-repeat,
+    radial-gradient(circle, #c2c7cf 0 1.8px, transparent 2px) 50% 50% / 6px 6px no-repeat,
+    radial-gradient(circle, #c2c7cf 0 1.8px, transparent 2px) 100% 50% / 6px 6px no-repeat;
+  transition: transform 180ms ease;
+}
+
+.thing-card.is-open .thing-media::before {
+  background:
+    radial-gradient(circle, #ffffff 0 1.8px, transparent 2px) 0 50% / 6px 6px no-repeat,
+    radial-gradient(circle, #ffffff 0 1.8px, transparent 2px) 50% 50% / 6px 6px no-repeat,
+    radial-gradient(circle, #ffffff 0 1.8px, transparent 2px) 100% 50% / 6px 6px no-repeat;
+  transform: translateX(-50%) scale(1.06);
+}
 
 .thing-image {
   display: block;
@@ -84,4 +109,3 @@
     max-height: 520px;
   }
 }
-
