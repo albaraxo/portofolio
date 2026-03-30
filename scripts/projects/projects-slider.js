@@ -9,19 +9,31 @@ if (projectSlider && projectTrack && projectCards.length > 0 && projectDots.leng
   let activeIndex = 0;
   let autoplayId = null;
 
+  function openProject(index) {
+    const url = projectCards[index]?.dataset?.url;
+    if (!url) return;
+    window.location.href = url;
+  }
+
   function setProject(index) {
     activeIndex = index;
-    const prevIndex = (index - 1 + projectCards.length) % projectCards.length;
-    const nextIndex = (index + 1) % projectCards.length;
 
-    projectCards.forEach((card, cardIndex) => {
-      const isActive = cardIndex === index;
-      const isPrev = cardIndex === prevIndex;
-      const isNext = cardIndex === nextIndex;
-      card.classList.toggle("is-active", isActive);
-      card.classList.toggle("is-prev", isPrev);
-      card.classList.toggle("is-next", isNext);
+    projectCards.forEach((card) => {
+      card.classList.remove("is-active", "is-prev", "is-next");
     });
+
+    projectCards[index].classList.add("is-active");
+
+    if (projectCards.length === 2) {
+      const otherIndex = index === 0 ? 1 : 0;
+      const sideClass = index === 0 ? "is-next" : "is-prev";
+      projectCards[otherIndex].classList.add(sideClass);
+    } else {
+      const prevIndex = (index - 1 + projectCards.length) % projectCards.length;
+      const nextIndex = (index + 1) % projectCards.length;
+      projectCards[prevIndex].classList.add("is-prev");
+      projectCards[nextIndex].classList.add("is-next");
+    }
 
     projectDots.forEach((dot, dotIndex) => {
       dot.classList.toggle("is-active", dotIndex === index);
@@ -68,15 +80,13 @@ if (projectSlider && projectTrack && projectCards.length > 0 && projectDots.leng
     card.setAttribute("tabindex", "0");
 
     card.addEventListener("click", () => {
-      setProject(index);
-      restartAutoplay();
+      openProject(index);
     });
 
     card.addEventListener("keydown", (event) => {
       if (event.key !== "Enter" && event.key !== " ") return;
       event.preventDefault();
-      setProject(index);
-      restartAutoplay();
+      openProject(index);
     });
   });
 

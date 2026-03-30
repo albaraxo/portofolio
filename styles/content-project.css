@@ -59,14 +59,14 @@
 
 .project-item-title {
   margin: 0 0 0.4rem;
-  color: #111111;
+  color: #00bd6d;
   font-size: 1.1rem;
   font-weight: 800;
 }
 
 .project-item-desc {
   margin: 0;
-  color: #444444;
+  color: #111111;
   font-size: 0.95rem;
   line-height: 1.75;
 }
@@ -78,10 +78,6 @@
   font-weight: 800;
   text-decoration: none;
   pointer-events: none;
-}
-
-.project-link:hover {
-  text-decoration: underline;
 }
 
 .projects-dots {
